@@ -1,4 +1,4 @@
 set -o errexit -o nounset
-cd DiceCloud/app
+cd app
 meteor npm install
 meteor

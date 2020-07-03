@@ -1,9 +1,10 @@
 FROM ubuntu:latest
 RUN apt-get update --quiet \
-    && apt-get install --quiet --yes \
-    bsdtar \
+    && DEBIAN_FRONTEND="noninteractive" apt-get install --quiet --yes \
+    libarchive-tools \
     curl \
-    git
+    git \
+    nano
 RUN ln --symbolic --force $(which bsdtar) $(which tar)
 RUN useradd --create-home --shell /bin/bash dicecloud
 USER dicecloud
